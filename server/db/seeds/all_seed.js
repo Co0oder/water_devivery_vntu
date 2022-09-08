@@ -9,12 +9,6 @@ exports.seed = function(knex) {
     .then(function () {
       return knex('regions').insert(regions);
     })
-    // .then(function() {
-    //   return knex('items').del()
-    // })
-    // .then(function () {
-    //   return knex('items').insert(items);
-    // })
     .then(function() {
       return knex('reviews').del()
     })

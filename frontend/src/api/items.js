@@ -1,7 +1,8 @@
 import fetch from '../helpers/fetch';
+import urls from './urls/urls';
 
 export async function getItemsAction() {
-    const response = await fetch('http://139.59.128.142/api/items',
+    const response = await fetch(urls.items,
         {
             method: 'GET',
             headers: {
@@ -11,7 +12,7 @@ export async function getItemsAction() {
     return response.json();
 }
 export async function getItemsByIdAction(ids) {
-    const response = await fetch(`http://139.59.128.142/api/items?ids=${ids.join(',')}`,
+    const response = await fetch(`${urls.items}?ids=${ids.join(',')}`,
         {
             method: 'GET',
             headers: {
@@ -24,7 +25,7 @@ export async function saveItemAction(item, id = '') {
     if (!item) throw new Error('No item!');
 
     console.log(item)
-    const response = await fetch('http://139.59.128.142/api/items/' + id,
+    const response = await fetch(`${urls.items}/` + id,
         {
             method: 'POST',
             body: item,
@@ -34,7 +35,7 @@ export async function saveItemAction(item, id = '') {
 export async function editItemAction(item) {
     if (!item) throw new Error('No item!');
 
-    const response = await fetch('http://139.59.128.142/api/items',
+    const response = await fetch(urls.items,
         {
             method: 'PUT',
             headers: {
@@ -47,7 +48,7 @@ export async function editItemAction(item) {
 export async function deleteItemAction(id) {
     if (!id) throw new Error('No id!');
 
-    const response = await fetch('http://139.59.128.142/api/items/'+ id,
+    const response = await fetch(`${urls.items}/`+ id,
         {
             method: 'DELETE',
             headers: {

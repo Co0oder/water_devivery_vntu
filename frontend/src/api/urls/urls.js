@@ -1,4 +1,4 @@
-const baseUrl = "http://139.59.128.142/api";
+const baseUrl = "http://ec2-44-210-138-69.compute-1.amazonaws.com";
 
 const urls = {
     orders: `${baseUrl}/orders/`,
@@ -8,6 +8,9 @@ const urls = {
     regions: `${baseUrl}/regions`,
     history: `${baseUrl}/history`,
     reviews: `${baseUrl}/reviews`,
+    logout: `${baseUrl}/logout`,
+    login: `${baseUrl}/login`,
+    session: `${baseUrl}/admin`
 }
 
 export default urls;

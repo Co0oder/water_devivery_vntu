@@ -1,7 +1,8 @@
 import fetch from '../helpers/fetch';
+import urls from './urls/urls';
 
 export async function getCustomersAction() {
-    const response = await fetch('http://139.59.128.142/api/customers',
+    const response = await fetch(urls.customers,
         {
             method: 'GET',
             headers: {
@@ -14,7 +15,7 @@ export async function getCustomersAction() {
 export async function addCustomerAction(customer) {
     if (!customer) throw new Error('No customer!');
 
-    const response = await fetch('http://139.59.128.142/api/customers',
+    const response = await fetch(urls.customers,
         {
             method: 'POST',
             headers: {
@@ -28,7 +29,7 @@ export async function addCustomerAction(customer) {
 export async function deleteCustomerAction(id) {
     if (!id) throw new Error('No id!');
 
-    const response = await fetch('http://139.59.128.142/api/customers/'+ id,
+    const response = await fetch(`${urls.customers}/`+ id,
         {
             method: 'DELETE',
             headers: {

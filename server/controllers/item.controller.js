@@ -9,7 +9,6 @@ module.exports = {
         const fileData = req.file;
         const id = req.params.id;
         let item;
-        console.log('!!!!!!!!!!!!', fileData)
         if(id){
             const [oldItem] = await itemsController.getItemById(id);
             const newItem = {
