@@ -89,7 +89,6 @@ function FeedbackModal({ show, onHide, sendOrder }) {
     const classes = useStyles();
 
     useEffect(() => {
-        console.log(getDeliveryTimeOptions(values.deliveryDate).find(t => t.value === values.deliveryTime))
         if (values.deliveryTime
             && !getDeliveryTimeOptions(values.deliveryDate).find(t => t.value === values.deliveryTime)) {
             setValues({ ...values, deliveryTime: '' })

@@ -66,7 +66,6 @@ function createItem(props) {
 }
 
 function updateItem(props,id) {
-    console.log(props)
     return itemsController.updateItem(props, id);
 }
 

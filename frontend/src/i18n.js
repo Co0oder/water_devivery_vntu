@@ -10,8 +10,6 @@ const resources = {
 
 const currentLanguage = localStorage.getItem('language') ? localStorage.getItem('language') : 'ua'
 
-console.log(currentLanguage);
-
 i18next
   .use(initReactI18next) // passes i18n down to react-i18next
   .init({

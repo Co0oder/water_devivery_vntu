@@ -88,7 +88,6 @@ function Items() {
         getItemsAction().then(data => {
             setItems(data)
         }).catch(e => {
-            console.log('getItemsAction err -->', e)
             setError(ERRORS.DEFAULT)
         })
     }, [])
@@ -110,7 +109,6 @@ function Items() {
             setItems([data, ...items])
             resolve()
         } catch (e) {
-            console.log('saveItemAction err -->', e)
             setError(ERRORS.DEFAULT)
             reject()
         }
@@ -123,7 +121,6 @@ function Items() {
             return
         }
         try {
-            console.log(newData)
             const [updatedItem] = await saveItemAction(preparePostData(newData), newData.id)
             const dataUpdate = [...items]
             const index = oldData.tableData.id
@@ -131,7 +128,6 @@ function Items() {
             setItems(dataUpdate)
             resolve()
         } catch (e) {
-            console.log('saveItemAction err -->', e)
             setError(ERRORS.DEFAULT)
             reject()
         }
@@ -143,7 +139,6 @@ function Items() {
             setItems(items.filter(i => i.id !== oldData.id))
             resolve()
         } catch (e) {
-            console.log('deleteItemAction err -->', e)
             setError(ERRORS.DEFAULT)
             reject()
         }

@@ -14,7 +14,6 @@ function PaginationTable({countPages, currentPage, onPageChange}) {
     }, [countPages]);
 
     const onChangePage = (page) => {
-        console.log('page', countPages)
         if(page <= countPages && page >= 1){
             onPageChange(page)
         }

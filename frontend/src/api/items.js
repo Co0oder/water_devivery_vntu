@@ -24,7 +24,6 @@ export async function getItemsByIdAction(ids) {
 export async function saveItemAction(item, id = '') {
     if (!item) throw new Error('No item!');
 
-    console.log(item)
     const response = await fetch(`${urls.items}/` + id,
         {
             method: 'POST',

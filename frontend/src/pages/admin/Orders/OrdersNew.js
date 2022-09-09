@@ -198,7 +198,6 @@ function Orders() {
             setOrders([data, ...orders])
             resolve()
         } catch (e) {
-            console.log('saveOrderAction err -->', e)
             setError(ERRORS.DEFAULT)
             reject()
         }
@@ -223,7 +222,6 @@ function Orders() {
             setOrders(dataUpdate)
             resolve()
         } catch (e) {
-            console.log('saveOrderAction err -->', e)
             setError(ERRORS.DEFAULT)
             reject()
         }
@@ -235,7 +233,6 @@ function Orders() {
             setOrders(orders.filter(i => i.id !== oldData.id))
             resolve()
         } catch (e) {
-            console.log('deleteOrderAction err -->', e)
             setError(ERRORS.DEFAULT)
             reject()
         }

@@ -293,8 +293,6 @@ function App({data}) {
     }
 
     const handleRowAdd = (newData, resolve) => {
-        console.log(newData)
-        console.log(resolve)
         //validation
         // let errorList = []
         // if(newData.first_name === undefined){

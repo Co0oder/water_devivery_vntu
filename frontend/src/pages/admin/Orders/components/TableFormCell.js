@@ -27,7 +27,6 @@ function TableFormCell({order = {}, onSave, onCancel}) {
     const [comment, setComment] = useState(order.comment || '')
 
     const onSaveOrder = () => {
-        console.log(tel.replace(/^\D+/g,''));
         onSave({
             name,
             address,

@@ -90,7 +90,6 @@ function Customers() {
         getCustomersAction().then(({data}) => {
             setCustomers(data.map(item => ({...item, address: `${item.address}, ${item.house_number}`})))
         }).catch(e => {
-            console.log('getCustomersAction err -->', e)
             setError(ERRORS.DEFAULT)
         })
     }, [])
@@ -113,7 +112,6 @@ function Customers() {
             setCustomers([data, ...customers])
             resolve()
         } catch (e) {
-            console.log('addCustomerAction err -->', e)
             setError(ERRORS.DEFAULT)
             reject()
         }
@@ -135,7 +133,6 @@ function Customers() {
             resolve()
 
         } catch (e) {
-            console.log('addCustomerAction err -->', e)
             setError(ERRORS.DEFAULT)
             reject()
         }
@@ -147,7 +144,6 @@ function Customers() {
             setCustomers(customers.filter(i => i.id !== oldData.id))
             resolve()
         } catch (e) {
-            console.log('deleteCustomerAction err -->', e)
             setError(ERRORS.DEFAULT)
             reject()
         }

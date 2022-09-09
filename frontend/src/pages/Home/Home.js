@@ -93,7 +93,6 @@ function Home() {
                 price: itemsInBasket.reduce((acc, item) => acc + (item.price * item.count), 0),
             })
         } catch (e) {
-            console.log('sendOrder --> ', e);
         }
         setItemsInBasket([])
         deleteAllFromBasket()

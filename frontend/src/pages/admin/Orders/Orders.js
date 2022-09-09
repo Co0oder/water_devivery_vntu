@@ -79,7 +79,6 @@ function Orders() {
     const onPageChange = (pageNumber) => {
         setCurrentPage(pageNumber);
         setOrdersOnShow(getRoomsByPage(pageNumber));
-        console.log(getRoomsByPage(pageNumber))
     }
 
     const getCountPages = () => {
