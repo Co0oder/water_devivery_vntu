@@ -12,8 +12,11 @@ import Tooltip from "@material-ui/core/Tooltip";
 const useStyles = makeStyles({
     root: {
         position: "relative",
-        maxWidth: 345,
-        height: '450px',
+        display: 'flex',
+        flexDirection: 'column',
+        maxWidth: '350px',
+        minWidth: '300px',
+        height: '500px',
         margin: "auto",
         borderRadius: '10px',
         border: '2px solid #1C9AB3',
@@ -21,6 +24,7 @@ const useStyles = makeStyles({
     },
     media: {
         height: 240,
+        backgroundSize: 'contain',
     },
     title: {
         textAlign: 'center',
@@ -54,7 +58,6 @@ export default function ItemCard({ item, addItemToBasket }) {
                     <CardMedia
                         className={classes.media}
                         image={item.image}
-                        title="Contemplative Reptile"
                     />
                     <CardContent>
                         <Typography className={classes.title} gutterBottom variant="h6" component="h5">

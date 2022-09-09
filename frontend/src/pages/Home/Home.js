@@ -32,8 +32,8 @@ function Alert(props) {
 }
 
 function Home() {
-    const WATER_ID = 33
-    const [items, setItems] = useState({});
+    const WATER_ID = 1
+    const [items, setItems] = useState({})
     const [itemsInBasket, setItemsInBasket] = useState([])
     const [showFeedbackModal, setShowFeedbackModal] = useState(false)
     const [showMainFormModal, setShowMainFormModal] = useState(false)

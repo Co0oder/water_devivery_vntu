@@ -19,6 +19,8 @@ export async function logoutAction() {
                 'Content-Type': 'application/json; charset=UTF-8',
             },
         })
+    window.localStorage.clear();
+    window.location.reload(false);
     return response.json();
 }
 

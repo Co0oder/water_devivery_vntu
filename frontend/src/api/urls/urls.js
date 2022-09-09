@@ -1,4 +1,4 @@
-const baseUrl = "http://ec2-44-210-138-69.compute-1.amazonaws.com";
+const baseUrl = "https://zdorovavodavn.com/api";
 
 const urls = {
     orders: `${baseUrl}/orders/`,
@@ -8,8 +8,8 @@ const urls = {
     regions: `${baseUrl}/regions`,
     history: `${baseUrl}/history`,
     reviews: `${baseUrl}/reviews`,
-    logout: `${baseUrl}/logout`,
-    login: `${baseUrl}/login`,
+    logout: `${baseUrl}/admin/logout`,
+    login: `${baseUrl}/admin/login`,
     session: `${baseUrl}/admin`
 }
 

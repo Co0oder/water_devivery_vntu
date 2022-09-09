@@ -1,9 +1,10 @@
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useHistory } from "react-router-dom";
 import ShoppingCart from '@material-ui/icons/ShoppingCartRounded'
 import SidebarStyled from "../styled/SidebarStyled";
 import SidebarHeader from "../styled/SidebarHeader";
 import SidebarTitle from "../styled/SidebarTitle";
 import SidebarMenu from "../styled/SidebarMenu";
+import { logoutAction } from "../../../api/admin"
 
 import SidebarLink from "../styled/SidebarLink";
 import { ReactComponent as HomeIcon } from '../../../static/img/admin/home.svg'
@@ -81,7 +82,7 @@ function Sidebar({toggle, show}) {
                 {
                     SidebarData.map( (item, index) => {
                         return (
-                            <Link key={index} to={item.path}>
+                            <Link key={index} to={item.path} onClick={item.path === '#' ? () => logout() : null}>
                                 <SidebarLink open={show} active={location.pathname === item.path}>
                                     {item.icon}
                                     { show && <span>{item.title}</span> }
@@ -93,6 +94,11 @@ function Sidebar({toggle, show}) {
             </SidebarMenu>
         </SidebarStyled>
     );
+}
+
+async function logout(locATION) {
+    await logoutAction();
+    window.location.reload(false);
 }
 
 export default Sidebar;

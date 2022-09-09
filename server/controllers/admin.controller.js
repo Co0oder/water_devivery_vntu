@@ -1,7 +1,6 @@
 const {LOGIN,PASSWORD, SECRET} = require('../constants');
 const { validationResult } = require('express-validator');
 const jwt = require('jsonwebtoken');
-const adminValidator = require('../routes/validators/admin.validator');
 
 module.exports  = {
     login: (req,res) => {
@@ -16,6 +15,7 @@ module.exports  = {
             return
         }
         const user = jwt.sign({user: 'admin', role: 'admin'}, SECRET);
+        req.session.user = user;
         res.json({user});
     },
 

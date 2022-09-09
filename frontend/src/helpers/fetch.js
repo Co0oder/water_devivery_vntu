@@ -1,8 +1,8 @@
 import {getFromLocal} from "./localStorage";
 
-const token = getFromLocal('token');
 
 export default function(url, params) {
+    const token = getFromLocal('token');
     return fetch(url, {
         ...params,
         headers: {
